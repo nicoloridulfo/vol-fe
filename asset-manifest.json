@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/vol-fe/static/css/main.9a71fbc5.css",
-    "main.js": "/vol-fe/static/js/main.3854471b.js",
+    "main.js": "/vol-fe/static/js/main.c0fd43e6.js",
     "static/js/27.a27d6eb2.chunk.js": "/vol-fe/static/js/27.a27d6eb2.chunk.js",
     "index.html": "/vol-fe/index.html"
   },
   "entrypoints": [
     "static/css/main.9a71fbc5.css",
-    "static/js/main.3854471b.js"
+    "static/js/main.c0fd43e6.js"
   ]
 }
