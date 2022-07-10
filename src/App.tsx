@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   const [on, setOn] = useState(false);
   const [primes, setPrimes] = useState<bigint[]>([]);
+  const [totalPrimes, setTotalPrimes] = useState(0);
   const [running, setRunning] = useState(false);
   const [size, setSize] = useState(4096);
 
@@ -28,9 +29,18 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [on, running]);
 
+  const getTotalPrimes = () =>
+    fetch('https://vol-be.azurewebsites.net/primes/stats').then(res => res.json()).then(res => setTotalPrimes(res.count));
+
+  useEffect(() => {
+    getTotalPrimes();
+  }, [primes]);
+
+
   return (
     <div className="App">
       <h1>Let's find primes together! v0.1</h1>
+      <h3>Together we have found {totalPrimes} primes!</h3>
       <h3>You have found {primes.length} primes!</h3>
       Searching for <input style={{ width: "45px" }} type="number" value={size} onChange={(e) => setSize(Number(e.target.value))} /> Bit primes
       <br></br>
