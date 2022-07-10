@@ -26,6 +26,7 @@ function App() {
     } else {
       clearInterval(intervalState);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [on])
 
   return (
